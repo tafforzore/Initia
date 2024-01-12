@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+
+        {% comment %} {% include 'includes/pre-loader.html' %} {% endcomment %}
+
+        <!-- Hero -->
+       
+        <section class="section-header">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+                        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="/accounts/contact/">contact</a></li>
+                    </ol>
+            <a href="/" class="btn btn-tertiary">retour</a>
+
+                </nav>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-8 text-center">
+                        <h1 class="display-2 mb-3">Prendre Contact</h1>
+                        <p class="lead">TANDIS toujours disponible pour repondre a vos preocupations</p>        
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                    <div class="col-12 col-lg-8">
+                        <!-- Contact Card -->
+                        <div class="card border-0 p-2 p-md-3 p-lg-5">
+                            <div class="card-body px-0 pt-0">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <!-- Form -->
+                                    <div class="mb-4">
+                                        <label for="name">Votre Nom</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon3"><span class="fas fa-user-circle"></span></span>
+                                            <input type="text" class="form-control" placeholder="Saisir votre Nom" id="name" name="name" value={{request.user.username}} required>
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <!-- Form -->
+                                    <div class="mb-4">
+                                        <label for="email">Votre Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon4"><span class="fas fa-envelope"></span></span>
+                                            <input type="email" class="form-control" placeholder="Saisir votre email" id="email" name='email' value={{request.user.email}} required>
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="mb-4">
+                                        <label for="message">Votre Message</label>
+                                        <textarea placeholder="Saisir votre Message" class="form-control" id="message" rows="4" name="message" required></textarea>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn rounded btn-secondary">Envoyer </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End of Contact Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+    </main>
+
+    {% endblock content %}

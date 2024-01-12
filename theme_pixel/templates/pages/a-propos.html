@@ -1,0 +1,59 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+
+
+        <!-- Hero -->
+        <div class="section-header bg-primary-app pb-2">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+                        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="/investir/">A - propos</a></li>
+                    </ol>
+            <a href="/" class="btn btn-tertiary">retour</a>
+
+                </nav>
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <img src="{% static 'assets/img/agro/logo.png' %}" class="rounded-circle img-thumbnail image-lg border-gray-300 p-2" alt="Profile image">
+                        <div class="mt-4 mb-5">
+                            <h1 class="display-2 fw-normal my-4"> A Propos de  <span class="text-through fw-bold"></span> TANDIS GICAEDEF</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Hero section -->
+        <!-- Section -->
+        <section class="section section-lg bg-primary-app pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-left text-md-right">
+                        <p class="lead fw-bold text-dark">
+                            Tandis est une societe de production de transformation , distribution et commercialisation des produits avicoles
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Nous sommes ume entreprise qui compte revolutionner le secteur avicole africain et plus precisement camerounais . La cherte de la vie et en particulier celle des produits comme la volaille est l'element declencheur du projet ( Nous voulons faire rayonner l'activite avicole camerounaise qui connais de nos jour de nombreuses difficultes. Qu'il s'agisse des produits avicoles, leur production et encore leur cout sur le marche)
+                            indique pascalo Tantoufouet, promotteur du projet. 
+                        </p>
+                        <p class="d-none d-lg-block">
+                            Face a la demande croissante et a une offre peu satisfaisante. TANDIS GICAEDEF compte bien pallier a ce probleme. l'entrepise dispose d'un vaste reseaud e production qui produit de la vollaile du porc , ainsi que des inttrants avicoles devellopes dans la ville de DSHANG a l'OUEST Camerounn. 
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            Pour Mener a bien le projet , des parts sociales representant 40% du capital de l'entreprise ont ete mise a la dispposition du public .Cinq Mille Francs (5000 FCFA) est la somme qui presente l'achat d'une part . TANDIS GICAEDEF vas directement vers les agriculteurs , leur propose le service d'ecoulement de leur produits sur toute etendud du territoire ainsi que Afrique. 
+                        </p>
+                        {% comment %} <img class="mt-3" src="{% static 'assets/img/signature.svg' %}" alt="signature" width="100"> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section -->
+    </main>
+
+    {% endblock content %}

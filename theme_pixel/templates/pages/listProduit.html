@@ -1,0 +1,136 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+
+  {% comment %} {% include 'includes/pre-loader.html' %} {% endcomment %}
+
+  <!-- Hero -->
+  {% comment %} <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+    <div class="container">
+    </div>
+    <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2"><svg class="fill-white"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+        <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+      </svg></figure>
+  </section> {% endcomment %}
+  {% comment %} <div class="section py-0">
+    <div class="container mt-n10 mt-lg-n12 z-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10"><img src="{% static 'assets/img/presentation-mockup.png' %}" alt="Pixel Free Mockup"></div>
+      </div>
+    </div>
+  </div> {% endcomment %}
+
+  <section class="section-header">
+    <div class="container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h1 class="display-2 mb-3">Mes Produits</h1>
+                </div>
+            </div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+                  <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                  <li class="breadcrumb-item"><a href="/produit/">produit</a></li>
+              </ol>
+            <a href="/" class="btn btn-tertiary">retour</a>
+          </nav>
+          {% comment %} {% for produit in produits%}
+            {% if produit.couverture_principale %}
+              <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+                <div class="col-12 col-lg-5 mb-5 mb-lg-0 order-lg-2">
+                  <h2 class="h1">{{produit.nom}}</h2>
+                  <p class="mb-4 lead fw-bold">{{produit.type}}</p>
+                  <p class="mb-4">{{produit.contenu}}</p>
+                  <p class="mb-4">{{produit.petite_description}}</p>
+                  <a href="https://themesberg.com/docs/pixel-bootstrap/components/accordions/" target="_blank"
+                    class="btn btn-outline-primary"><span class="fas fa-book me-2"></span> En savoir plus </a>
+                </div>
+                <div class="col-12 col-lg-6 order-lg-1">
+                  <img src="{{produit.photos.url}}" alt="Front pages overview">
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %} {% endcomment %}
+          <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+            <div class="col-12 col-lg-5 mb-5 mb-lg-0 order-lg-2">
+              <h2 class="h1">Découvrez la Fraîcheur et la Commodité</h2>
+              <p class="mb-4 lead fw-bold"></p>
+              <p class="mb-4"></p>
+              <p class="mb-4">Nos poulets sont élevés avec soin pour garantir une qualité exceptionnelle. Une fois arrivés à maturité, ils sont habilement découpés par nos experts en boucherie pour vous offrir des morceaux prêts à cuisiner. Chaque découpe est effectuée avec précision, garantissant une expérience gustative optimale.</p>
+            </div>
+            <div class="col-12 col-lg-6 order-lg-1">
+              <img src="{% static 'assets/img/agro/produit3.jpg' %}" alt="Front pages overview">
+            </div>
+          </div>
+        </div>
+        </div>
+      
+      <div class="section section-sm pb-0 mb-n4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <h3 class="text-center">Nos autres produits</h3>
+          </div>
+          <div class="row mb-5 mb-lg-6">
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.41.37.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.41.45.jpeg' %}" class="card-img-top rounded-top" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.42.10.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.42.42.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.43.22.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div class="card shadow border-gray-300">
+                    <img src="{% static 'assets/img/agro/WhatsApp Image 2023-11-05 at 10.45.04.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+              <div class="card shadow border-gray-300">
+                  <img src="{% static 'assets/img/agro/produit.jpg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="card shadow border-gray-300">
+                <img src="{% static 'assets/img/agro/produit2.jpeg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="card shadow border-gray-300">
+              <img src="{% static 'assets/img/agro/produit3.jpg' %}" class="card-img-top rounded-top rounded-bottom" alt="Joseph Portrait">
+          </div>
+      </div>
+        </div>
+        </div>
+        {% comment %} {% include 'utility/_cards.html' %} {% endcomment %}
+        
+      </div>          
+    </section>
+
+
+
+
+</main>
+
+{% endblock content %}

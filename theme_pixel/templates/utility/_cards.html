@@ -1,0 +1,27 @@
+{% load static %}
+
+<!--End of Title section-->
+<div class="section section-md">
+    <div class="container">
+        <div class="row mb-5">
+            {% for produit in produits%}
+                {% if produit.couverture_principale == False %}
+                    
+                        <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                            <div class="card shadow">
+                                <img src="{{produit.photos.url}}" class="card-img-top rounded-top"
+                                    alt="Themesberg office">
+                                <div class="card-body">
+                                    <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>{{produit.type}}</span>
+                                    <h3 class="h5 card-title mt-3">{{produit.nom}}</h3>
+                                    <p class="card-text">{{produit.petite_description}}</p>
+                                    <a href="#" class="btn btn-primary btn-sm">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                {% endif %}    
+            {% endfor %}
+        </div>
+    </div>
+</div>

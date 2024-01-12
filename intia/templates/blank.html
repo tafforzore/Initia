@@ -1,0 +1,193 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        {% comment %} {% include 'includes/pre-loader.html' %} {% endcomment %}
+
+        <!-- Hero -->
+        <section class="section-header">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <h1 class="display-2 mb-3">INTIA dashbord</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+
+                    <div class="container-img" id="imgst"></div>
+                    <div class="container" id="infosUser">
+                            <div class="row">
+                
+                                <div class="col" id="infomation">
+                                    {% if message != None %}
+                                        <div class="alert alert-success" role="alert">
+                                            {{message}}
+                                        </div>
+                                    {% endif %}
+                                    <form method='POST' action="{% url 'ajouter_personnel' %}">
+                                        {% csrf_token %}
+                                        <h2 class="h5 mb-4">Ajouter un Personnel</h2>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div>
+                                                    <label for="first_name">Prénom</label>
+                                                    <input class="form-control" id="first_name" type="text" placeholder="Entrez votre prénom" name='prenom' required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div>
+                                                    <label for="last_name">Nom</label>
+                                                    <input class="form-control" id="last_name" type="text" placeholder="Aussi votre nom" name='nom' required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit" style="float: right;">Ajouter</button>
+                                    </form>
+                                    
+                                </div>
+                                <div class="col-md-auto">
+                                    <div class="card d-flex align-items-center" id="resize">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">
+                                                <!-- <img src="{{ config.ASSETS_ROOT }}/img/brand/chili_corn_sin_carne.avif" alt="profil image" class="img-fluid rounded" height="30%"> -->
+                                                <img src="{{ config.ASSETS_ROOT }}/img/brand/users.svg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" style="background-color: #f2f4f6; width: 120px;height: 120px;" alt="Neil Portrait">
+                                            </h5>
+                                            <h2 class="h5 mb-4" style="margin-bottom: 20px;">Liste Personnel</h2>
+                                            <p class="card-text">
+                                                <div class="table-responsive-sm">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <th scope="col" id="teacher2">nom</th>
+                                                            <th scope="col" id="males2">Prenom</th>
+                                                            <th scope="col" id="females2">actif</th>
+                                                            <th scope="col" id="females2">action</th>
+                                                        </tr>
+                                                        {% for element in liste_personel %}
+                                                            <tr>
+                                                                <form method ="POST" action="{% url 'modifier_personnel' %}">
+                                                                    {% csrf_token %}
+                                                                    <th scope="row" >{{element.nom}}</th>
+                                                                    <th scope="row" id="Bolter2" >{{element.prenom}}</th>
+                                                                    <td headers="firstyear2 Bolter2 males2">{{element.desactivation}}</td>
+                                                                    <td headers="firstyear2 Bolter2 males2">
+                                                                        <input type="hidden" value="{{element.id}}" name="identifiant">
+                                                                        <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit" style="float: right;" name='Modifier'>Modifier</button>
+                                                                        <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit" style="float: right;" name='Desactiver' value="{{element.id}}">Desactiver</button>
+                                                                    </td>
+                                                                </form>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    </table>
+                                                </div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="">
+                                        <form method='POST' action="{% url 'ajouter_activiter' %}">
+                                            {% csrf_token %}
+                                            <h2 class="h5 mb-4">Ajouter une activiter</h2>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div>
+                                                        <label for="last_name">Nom</label>
+                                                        <input class="form-control" id="last_name" type="text" placeholder=" nom" name='nom' required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit" style="float: right;">Ajouter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div>   
+                                    <h2 class="h5 mb-4" style="margin-bottom: 20px;">Liste Activiter</h2>
+                                            <p class="card-text">
+                                                <div class="table-responsive-sm">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <th scope="col" id="teacher2">nom</th>
+                                                        </tr>
+                                                        {% for element in liste_activite %}
+                                                            <tr>
+                                                                <form method ="POST" action="{% url 'modifier_personnel' %}">
+                                                                    {% csrf_token %}
+                                                                    <th scope="row" >{{element.nom}}</th>
+                                                                </form>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    </table>
+                                                </div>
+                                            </p>
+                                </div>
+                
+                            </div>
+                
+                        <!-- <div class="card card-body border-0 shadow ">
+                    
+                        </div> -->
+                
+                        <div class="col-md-auto">
+                            <div class="card d-flex align-items-left" id="resize">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        <!-- <img src="{{ config.ASSETS_ROOT }}/img/brand/chili_corn_sin_carne.avif" alt="profil image" class="img-fluid rounded" height="30%"> -->
+                                        <img src="{{ config.ASSETS_ROOT }}/img/brand/users.svg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" style="background-color: #f2f4f6; width: 120px;height: 120px;" alt="Neil Portrait">
+                                    </h5>
+                                    <h2 class="h5 mb-4" style="margin-bottom: 20px;">Liste Personnel et leurs tache</h2>
+                                    <p class="card-text">
+                                        <div class="table-responsive-sm">
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th scope="col" id="teacher2">Nom</th>
+                                                    <th scope="col" id="males2">Tache</th>
+                                                </tr>
+                                                {% for element in personne_travaille %}
+                                                    <tr>
+                                                            <th scope="row" >{{element.Personnel}}</th>
+                                                            <th scope="row" id="Bolter2" >{{element.jour}}</th>
+                                                    </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </p>
+
+                                    
+                                </div>
+                            </div>
+
+                            <div class="card d-flex align-items-left" id="resize">
+                                <div class="card-body">
+                                     <h2 class="h5 mb-4" style="margin-bottom: 20px;">Horaire de travail</h2>
+                                    <p class="card-text">
+                                        <div class="table-responsive-sm">
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th scope="col" id="teacher2">jour</th>
+                                                    <th scope="col" id="males2">heure</th>
+                                                    <th scope="col" id="males2">Tache</th>
+                                                </tr>
+                                                {% for element in activite_journaliere %}
+                                                    <tr>
+                                                            <th scope="row" >{{element.jour}}</th>
+                                                            <th scope="row" id="Bolter2" >{{element.heure}} hrs</th>
+                                                            <th scope="row" id="Bolter2" >{{element.activite}}</th>
+                                                    </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </p>
+            
+                                </div>
+                            </div>  
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+{% endblock content %}

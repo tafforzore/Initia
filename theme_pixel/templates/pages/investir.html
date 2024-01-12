@@ -1,0 +1,151 @@
+
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<main>
+
+<!--End of Title section-->
+
+<div class="section section-header">    
+    
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="/accounts/investissement/">Investir</a></li>
+            </ol>
+            <a href="/" class="btn btn-tertiary">retour</a>
+
+        </nav>
+        <div class="row justify-content-center mt-4">
+            <div class="col-12 col-lg-8">
+                <div class="row mb-5">
+                    <div class="h1 mb-4 col-12 col-md-9 col-lg-8 text-center mx-auto">
+                        <span class="">Investir</span>
+                    </div>
+                </div>
+                <!--Accordion-->
+                <div class="accordion" id="accordionExample1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Paymooney
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+                            <div class="accordion-body">
+                                <form method="POST" action="{% url 'post-invest' %}">
+                                    {% csrf_token %}
+                                    <div class="container">
+                                        <div class="row mb-4 mb-lg-5">
+                                            <div class="col-lg-4 col-sm-6">
+                                                <!-- Form -->
+                                                <div class="mb-4">
+                                                    <label for="exampleInputEmail6">Email</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail6" value={{request.user.email}} disabled>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Pays</label>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"  name="pays" value={{user.pays}} disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <!-- Form -->
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Nom</label>
+                                                    <input type="text" id="disabledTextInput"  name="nom" class="form-control" placeholder="Disabled input" value ={{user.nom}} disabled>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Prenom</label>
+                                                    <input type="text" id="disabledTextInput" name="prenom" class="form-control" placeholder="Disabled input" value={{user.prenom}} disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Numeros</label>
+                                                    <input type="text" id="disabledTextInput"  name="numeros" class="form-control" placeholder="Disabled input" value={{user.numeros}} disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="disabledTextInput">Montant</label>
+                                            <input type="Number" id="Montant" name='montant' class="form-control" placeholder="Montant" minlength="500" required>
+                                        
+                                        <div class="d" style="height: 10px;"></div>
+                                        <div class="mb-3" style="margin: 20px;">
+                                            <input type="submit" class="btn btn-tertiary" name="paymooney" value="Investir">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                En Personne
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample1">
+                            <div class="accordion-body">
+                                <form action="POST">
+                                    {% csrf_token %}
+                                    <div class="container">
+                                        <div class="row mb-4 mb-lg-5">
+                                            <div class="col-lg-4 col-sm-6">
+                                                <!-- Form -->
+                                                <div class="mb-4">
+                                                    <label for="exampleInputEmail6">Email</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail6" value={{request.user.email}} disabled>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Pays</label>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"  name="pays" value={{user.pays}} disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <!-- Form -->
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Nom</label>
+                                                    <input type="text" id="disabledTextInput"  name="nom" class="form-control" placeholder="Disabled input" value ={{user.nom}} disabled>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Prenom</label>
+                                                    <input type="text" id="disabledTextInput" name="prenom" class="form-control" placeholder="Disabled input" value={{user.prenom}} disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput">Numeros</label>
+                                                    <input type="text" id="disabledTextInput"  name="numeros" class="form-control" placeholder="Disabled input" value={{user.numeros}} disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="disabledTextInput">Montant</label>
+                                            <input type="Number" id="Montant" name='montant' class="form-control" placeholder="Montant" minlength="500" required>
+                                        
+                                        <div class="d" style="height: 10px;"></div>
+                                        <div class="mb-3" style="margin: 20px;">
+                                            <input type="button" id="disabledTextInput" class="btn btn-tertiary" value="Investir" name="en_personne">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--End of Accordion-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</main>
+
+{% endblock content %}

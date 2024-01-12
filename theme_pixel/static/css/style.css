@@ -1,0 +1,143 @@
+#custom{
+    width: 23.333%;
+}
+
+
+/*disposition des petit ecrans*/
+@media (max-width: 500px){
+  #custom{
+    width: 50% !important;
+}
+
+  #users{
+    justify-content: center !important;
+  }
+}
+
+#section{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.space{
+    height: 40px;
+}
+
+.section.py-0{
+    padding: 60px !important;
+}
+
+#section2{
+    margin-top: auto;
+}
+
+.headroom--not-top.navbar-theme-secondary{
+    background-color: #335e00 !important;
+}
+
+.bg-primary {
+    background-color: #335e00 !important;
+  }
+
+  .bg-secondary {
+    background-color: #335e00 !important;
+  }
+
+  .btn-tertiary:hover {
+    color: #ffffff;
+    background-color: #c1b60b;
+    border-color: #c1b60b;
+  }
+
+  .btn-primary:hover {
+    color: #ffffff;
+    background-color: #c1b60b;
+    border-color: #c1b60b;
+  }
+
+  .btn-tertiary {
+    color: #ffffff;
+    background-color: #17a045;
+    border-color: #17a045;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(23, 31, 56, 0.075);
+  }
+
+  .btn-primary {
+    color: #ffffff;
+    background-color: #17a045;
+    border-color: #17a045;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(23, 31, 56, 0.075);
+  }
+
+  .btn-secondary:hover {
+    color: #ffffff;
+    background-color: #c1b60b;
+    border-color: #c1b60b;
+  }
+
+  .btn-secondary {
+    color: #ffffff;
+    background-color: #17a045;
+    border-color: #17a045;
+  }
+
+  .bg-primary-app {
+    background-color: #ffffff !important;
+  }
+
+  @media (min-width: 1200px) {
+    .display-3 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .section-lg {
+      padding-top: 1rem;
+      padding-bottom: 8rem !important;
+    }
+  }
+
+  .header-global{
+    background-color: #335e00;
+  }
+
+  #users{
+    display: flex;
+  justify-content: space-between;
+  }
+
+  .navbar-brand img {
+    height: 56px;
+  }
+
+  #logo-img{
+    height: 60px;
+    width: 60px;
+  }
+
+  #info-logo{
+    padding: 13px 0;
+  }
+
+  #pays {
+    display: block;
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4B5563;
+    background-color: #F9FAFB;
+    background-clip: padding-box;
+    border: 0.0625rem solid #D1D5DB;
+    appearance: none;
+    border-radius: 1rem;
+    box-shadow: inset 0 1px 2px rgba(23, 31, 56, 0.075);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+
+
+
+
