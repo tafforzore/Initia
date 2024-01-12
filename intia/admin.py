@@ -26,10 +26,6 @@ class Useradmin(admin.ModelAdmin):
 class Useradmin(admin.ModelAdmin):
     list_display = ('heure','jour','activite')
 
-# Register your models here.
-@admin.register(Activite_Heure)
-class Useradmin(admin.ModelAdmin):
-    list_display = ('heure','activitte')
 
 @admin.register(Personne_Travaille)
 class Useradmin(admin.ModelAdmin):
